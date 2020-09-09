@@ -1,14 +1,16 @@
 import React, { useState, useEffect, FormEvent } from 'react';
 import logo from '../../assets/logo.svg';
 import { Title, Form, Developers, Header, Error } from './styles';
-import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
+import { FiChevronLeft, FiChevronRight, FiX } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import api from '../../services/api';
 
 interface User {
   login: string;
-  avatar_url: string;
+  name: string;
   bio: string;
+  avatar_url: string;
+  location: string;
 }
 
 const Dashboard: React.FC = () => {
@@ -27,6 +29,11 @@ const Dashboard: React.FC = () => {
     localStorage.setItem('@githubexplorer:users', JSON.stringify(listusers));
   }, [listusers])
 
+  async function deleteUser(event: FormEvent<HTMLFormElement>): Promise<void> {
+    event.preventDefault();
+
+  }
+
   async function handleAddUser(event: FormEvent<HTMLFormElement>): Promise<void> {
     event.preventDefault();
     if (!newUser) {
@@ -36,6 +43,13 @@ const Dashboard: React.FC = () => {
     try {
       const response = await api.get(`users/${newUser}`);
       const user = response.data;
+      const login = user.login;
+      console.log(user);
+      const userIndex = listusers.findIndex(user => user.login === login);
+      if (!userIndex) {
+        setInputError('Usuário já cadastrado.');
+        return;
+      }
       setUsers([...listusers, user]);
       setNewUser('');
       setInputError('');
@@ -70,10 +84,11 @@ const Dashboard: React.FC = () => {
             <img src={user.avatar_url}
               alt={user.login} />
             <div>
-              <strong>{user.login}</strong>
+              <strong>{user.name}</strong>
+              <p>{user.login}</p>
               <p>{user.bio}</p>
             </div>
-            <FiChevronRight size={20} />
+            <FiChevronRight size={30} />
           </Link>
         ))}
       </Developers>

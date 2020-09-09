@@ -12,6 +12,8 @@ interface UserParams {
 interface User {
   id: string;
   login: string;
+  name: string;
+  public_repos: number;
   avatar_url: string;
   url: string;
   followers: string;
@@ -58,11 +60,16 @@ const Repository: React.FC = () => {
           <header>
             <img src={user.avatar_url} alt={user.login} />
             <div>
-              <strong>{user.login}</strong>
+              <strong>{user.name}</strong>
+              <p>@{user.login}</p>
               <p>{user.bio}</p>
             </div>
           </header>
           <ul>
+            <li>
+              <strong>{user.public_repos}</strong>
+              <span>Public repos</span>
+            </li>
             <li>
               <strong>{user.followers}</strong>
               <span>Followers</span>
@@ -78,6 +85,7 @@ const Repository: React.FC = () => {
       <Repositories>
         {repositories.map(repository => (
           <Link key={repository.full_name} to={`/repositories/${repository.full_name}`}>
+            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" />
             <div>
               <strong>{repository.full_name}</strong>
               <p>{repository.description}</p>

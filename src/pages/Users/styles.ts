@@ -45,8 +45,6 @@ export const Form = styled.form<FormProps>`
       border-radius: 5px 0 0 5px;
       color: #5a5a5a;
       background: #1a1a1a;
-      border: 2px solid #1a1a1a;
-
       ${(props) => props.hasError && `
         border: 2px solid #f44;
       `}
@@ -75,58 +73,6 @@ export const Error = styled.span`
     display: block;
     color: #f44;
     margin-top: 8px;
-  `;
-
-export const Repositories = styled.div`
-    margin-top: 80px;
-    max-width: 800px;
-
-    a{
-      background: #3a3a3a;
-      border-radius: 5px;
-      width: 100%;
-      padding: 24px;
-      display: block;
-      text-decoration: none;
-      display: flex;
-      align-items:center;
-      transition: transform 0.4s;
-
-      & + a{
-        margin-top: 16px;
-      }
-
-      &:hover{
-        transform: translateX(5px);
-        background: #3f3f3f;
-      }
-
-      img {
-        width: 64px;
-        height: 64px;
-        border-radius: 50%;
-      }
-
-      div{
-        margin-left: 16px;
-        flex: 1;
-        strong{
-          font-size: 20px;
-          color: #dcdcdc;
-        }
-
-        p {
-          font-size: 20px;
-          color: #dcdcdc;
-          margin-top: 4px;
-        }
-      }
-
-      svg{
-        margin-left: auto;
-        color: #fcfcfc;
-      }
-    }
   `;
 
 export const Developers = styled.div`

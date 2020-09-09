@@ -96,6 +96,12 @@ export const Repositories = styled.div`
         background: #3f3f3f;
        }
 
+       img {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+      }
+
       div{
         margin-left: 16px;
         flex: 1;
