@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import logo from '../../assets/logo.svg';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import { Link, useRouteMatch } from 'react-router-dom';
-import { Header, RepositoryInfo, Issues } from './styles';
+import { Header, RepositoryInfo, Repositories } from './styles';
 import api from '../../services/api';
 
 interface UserParams {
@@ -75,17 +75,17 @@ const Repository: React.FC = () => {
         </RepositoryInfo>
       )}
 
-      <Issues>
+      <Repositories>
         {repositories.map(repository => (
-          <a key={repository.full_name} href={repository.url}>
+          <Link key={repository.full_name} to={`/repositories/${repository.full_name}`}>
             <div>
               <strong>{repository.full_name}</strong>
               <p>{repository.description}</p>
             </div>
             <FiChevronRight size={20} />
-          </a>
+          </Link>
         ))}
-      </Issues>
+      </Repositories>
     </>
   );
 };

@@ -72,7 +72,7 @@ export const RepositoryInfo = styled.section`
     }
 `;
 
-export const Issues = styled.div`
+export const Repositories = styled.div`
     margin-top: 80px;
     max-width: 800px;
 
