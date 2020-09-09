@@ -49,10 +49,16 @@ const Repository: React.FC = () => {
     <>
       <Header>
         <img src={logo} alt="GitHub Explorer" />
-        <Link to="/dashboard">
-          <FiChevronLeft size={16} />
-          Voltar
+        <div>
+          <Link to="/">
+            <FiChevronLeft size={16} />
+          Desenvolvedores
         </Link>
+          <Link to="/dashboard">
+            <FiChevronLeft size={16} />
+          Repositórios
+        </Link>
+        </div>
       </Header>
 
       {repository && (

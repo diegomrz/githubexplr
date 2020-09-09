@@ -1,7 +1,7 @@
 import React, { useState, useEffect, FormEvent } from 'react';
 import logo from '../../assets/logo.svg';
-import { Title, Form, Repositories, Error } from './styles';
-import { FiChevronRight } from 'react-icons/fi';
+import { Title, Form, Repositories, Header, Error } from './styles';
+import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import api from '../../services/api';
 
@@ -21,6 +21,8 @@ const Dashboard: React.FC = () => {
     const storageRepositories = localStorage.getItem('@githubexplorer:repositories');
     if (storageRepositories) {
       return JSON.parse(storageRepositories)
+    } else {
+      return [];
     }
   });
 
@@ -47,7 +49,13 @@ const Dashboard: React.FC = () => {
 
   return (
     <>
-      <img src={logo} alt="Github Explorer" />
+      <Header>
+        <img src={logo} alt="GitHub Explorer" />
+        <Link to="/">
+          <FiChevronLeft size={16} />
+          Desenvolvedores
+        </Link>
+      </Header>
       <Title>Explore repositórios no github!</Title>
       <Form hasError={!!inputError} onSubmit={handleAddRepository}>
         <input

@@ -45,8 +45,6 @@ export const Form = styled.form<FormProps>`
       border-radius: 5px 0 0 5px;
       color: #5a5a5a;
       background: #1a1a1a;
-      border: 2px solid #1a1a1a;
-
       ${(props) => props.hasError && `
         border: 2px solid #f44;
       `}
@@ -77,7 +75,7 @@ export const Error = styled.span`
     margin-top: 8px;
   `;
 
-export const Repositories = styled.div`
+export const Developers = styled.div`
     margin-top: 80px;
     max-width: 800px;
 

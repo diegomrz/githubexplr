@@ -72,7 +72,7 @@ export const RepositoryInfo = styled.section`
     }
 `;
 
-export const Issues = styled.div`
+export const Repositories = styled.div`
     margin-top: 80px;
     max-width: 800px;
 
@@ -95,6 +95,12 @@ export const Issues = styled.div`
         transform: translateX(5px);
         background: #3f3f3f;
        }
+
+       img {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+      }
 
       div{
         margin-left: 16px;
