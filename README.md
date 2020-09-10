@@ -1,44 +1,57 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1 align="center">
+  Rocket Seat - Projeto github_explorer
+</h1>
 
-## Available Scripts
+<p align="center">
+  
+  <img alt="GitHub language count" src="https://img.shields.io/github/last-commit/diegomrz/githubexplr">
+  
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/diegomrz/githubexplr">
 
-In the project directory, you can run:
+  <a href="https://www.linkedin.com/in/diegomrz/">
+    <img alt="Made by diegomrz" src="https://img.shields.io/badge/linkedin-diegomrz-blue">
+  </a>
 
-### `yarn start`
+  <a href="https://skylab.rocketseat.com.br/">
+    <img alt="Skylab RocketSeat" src="https://img.shields.io/badge/skylab-Rocketseat-blueviolet">
+  </a>
+  
+</p>
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## GoStack da RocketSeat
+O GoStack é um Treinamento imersivo nas tecnologias mais modernas de desenvolvimento web e mobile oferecido pela RocketSteat.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### Sobre o App
+Este app tem como objetivo tem como funcionalidade principal listar desenvolvedores e seus repositórios do github, na tela principal você pode inserir um nome de usuário para iniciar. A solução original ensinada no curso tinha um escopo diferente, sendo possível listar os repositórios e seus erros.
 
-### `yarn test`
+### Tecnologias
+- TypeScript
+- ReactJS
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Persistência
+LocalStorage
 
-### `yarn build`
+### Páginas
+- Dashboard com lista de usuários.
+- Página do usuário com sua lista de repositórios.
+- Dashboard com a lista de usuários.
+- Página do repositório com a lista de issues.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Funcionalidades da aplicação
+- Deve adicionar um usuário à lista a partir da inserção do <username> no campo de epsquisa e ao clicar no card, deve abrir a página com repositórios públicos.
+- Deve adicionar um repositório na lista a partir da inserção do <username>/<repo> no campo de pesquisa e ao clicar no card, deve abrir a página com as issues do repositório.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### Validações da aplicação
+#### Usuários
+- Verifica se o campos de usuário está vazio.
+- Verifica se o usuário existe no GitHub.
+- Verifica se o usuário já se encontra na lista.
+#### Repositórios
+- Verifica se o campos de usuário está vazio.
+- Verifica se o usuário existe no GitHub.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Oportunidades de melhoria
+- Remover usuários e repositórios das listas.
+- Favoritar um repositório a partir da lista de usuários e adicionar à lista de repositórios se este já não estiver adicionado.
+- Escolher entre acessar o repositório no git ou ir para a página do repositório na app.
+- Buscar mais informações da API como branches e linguagem de programação mais utilizada no repositório.
